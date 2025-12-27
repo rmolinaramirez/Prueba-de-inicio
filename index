@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Acceso restringido</title>
+  <style>
+    body {
+      background: #1b2a1f;
+      color: #f5e6c8;
+      font-family: Georgia, serif;
+      text-align: center;
+      padding: 40px;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+    }
+    #imagen {
+      display: none;
+      margin-top: 30px;
+    }
+    img {
+      max-width: 90%;
+      border: 4px solid #cfa44a;
+    }
+  </style>
+</head>
+<body>
+
+<h1>🌿 Solo los aventureros dignos pueden continuar 🌿</h1>
+
+<p><em>
+En la jungla soy rey,<br>
+no soy hombre ni dios.<br>
+Si me miras a los ojos,<br>
+el miedo te atrapó.<br><br>
+¿Quién soy?
+</em></p>
+
+<input type="text" id="respuesta" placeholder="Tu respuesta">
+<button onclick="verificar()">Entrar</button>
+
+<p id="error" style="color:#ff8080;"></p>
+
+<div id="imagen">
+  <h2>¡Has demostrado tu valentía!</h2>
+  <img src="Vale para aventura en la jungla.png" alt="Vale Jumanji">
+</div>
+
+<script>
+  function verificar() {
+    const r = document.getElementById("respuesta").value.toLowerCase().trim();
+    if (r === "león" || r === "leon") {
+      document.getElementById("imagen").style.display = "block";
+      document.getElementById("error").textContent = "";
+    } else {
+      document.getElementById("error").textContent = "Respuesta incorrecta. La jungla no perdona.";
+    }
+  }
+</script>
+
+</body>
+</html>
